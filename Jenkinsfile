@@ -11,18 +11,5 @@ pipeline {
                 '''
             }
         }
-        stage('Test') {
-            steps {
-                sh 'echo "Test works"'
-            }
-        }
     }
- 
-
-post {
-    always {
-        archive 'build/libs/**/*.jar'
-        junit 'build/reports/**/*.xml'
-    }
-}
-}
+} 
