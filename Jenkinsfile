@@ -11,11 +11,23 @@ pipeline {
                 '''
             }
         }
+
+         stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
         stage('test') {
             steps {
                 sh 'echo "Test is working"'
             }
         }
+         stage('deploy') {
+            steps {
+                sh 'echo "deploying..."'
+            }
+        }
+
 
     }
 } 
